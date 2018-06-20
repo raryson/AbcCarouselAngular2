@@ -1,14 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {CarouselModule} from "angular2-carousel";
 
 import { AppComponent } from './app.component';
+import { TesteComponent } from './teste/teste.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TesteComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
