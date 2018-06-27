@@ -1,4 +1,9 @@
 .letra
 {
-    font-size: 250px;
+    font-size: 100px;
+}
+
+.actual
+{
+    background-color: red
 }

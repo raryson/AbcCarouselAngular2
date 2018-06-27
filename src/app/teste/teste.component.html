@@ -1,7 +1,13 @@
-<carousel-component>
-  <div *ngFor="let letra of letras" class="item-carousel">
-    <span class="letra">{{letra}}</span>
+<carousel-component #carousel>
+  <div *ngFor="let letra of letras" class="item-carousel letra">
+    {{letra}}
   </div>
 </carousel-component>
 
+<button (click)="enviarALetraSelecionada()">Enviar</button>
+<br>
+LETRAS SELECIONADAS:
 
+<span *ngFor="let letraSelecionada of letraSelecionadas">
+  {{letraSelecionadas}}
+</span>
