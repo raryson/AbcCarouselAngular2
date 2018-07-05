@@ -1,5 +1,4 @@
-import { Component, OnInit, Input, ViewChild, ChangeDetectorRef } from '@angular/core';
-import { Location } from '@angular/common'
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import {CarouselComponent} from "angular2-carousel";
 
 @Component({
@@ -13,19 +12,20 @@ export class TesteComponent implements OnInit {
   @Input() letras : string[]
   @Input() letrasSelecionadas : string[]
 
-  constructor(private cdref:ChangeDetectorRef) { }
-
   @ViewChild('carousel') carousel : CarouselComponent
 
   ngOnInit() {
+    
   }
 
   enviarALetraSelecionada()
   {
     this.letrasSelecionadas.push(this.letras[this.carousel.carousel.activeIndex])
     this.letras.splice(this.carousel.carousel.activeIndex, 1)
-    alert(this.letrasSelecionadas)
-  }
+    
+    this.carousel.reInit()
+    this.carousel.update()
+    }
 
 
 }
