@@ -20,12 +20,17 @@ export class TesteComponent implements OnInit {
 
   enviarALetraSelecionada()
   {
+    
     this.letrasSelecionadas.push(this.letras[this.carousel.carousel.activeIndex])
     this.letras.splice(this.carousel.carousel.activeIndex, 1)
     
+    this.carousel.carouselElm.nativeElement.getElementsByClassName("item-carousel")[this.carousel.carousel.activeIndex].remove()
+    this.carousel.carousel.items.splice(this.carousel.carousel.activeIndex, 1)
     this.carousel.reInit()
-    this.carousel.update()
-    }
+    
+
+
+  }
 
 
 }
