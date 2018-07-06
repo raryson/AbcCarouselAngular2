@@ -1,1 +1,9 @@
-<app-teste  [letras]="letras" [letrasSelecionadas]="letrasSelecionadas"></app-teste>
+<div *ngIf="!usuarioTemUmNome">
+    <span>O seu nome é?</span>
+    <textarea value="nomeDoUsuario" #nomeDoUsuarioTextArea></textarea>
+    <button (click)="iniciarUmUsuario(nomeDoUsuarioTextArea)">Enviar</button>
+</div>
+
+<div *ngIf="usuarioTemUmNome">
+    <app-teste  [letras]="letras" [letrasSelecionadas]="letrasSelecionadas"></app-teste>
+</div>
