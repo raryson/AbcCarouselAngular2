@@ -1,9 +1,22 @@
-<div *ngIf="!usuarioTemUmNome">
-    <span>O seu nome é?</span>
-    <textarea value="nomeDoUsuario" #nomeDoUsuarioTextArea></textarea>
-    <button (click)="iniciarUmUsuario(nomeDoUsuarioTextArea)">Enviar</button>
+<div *ngIf="!usuarioTemUmNome" >
+    <h1 class="titulo text-center">BEM VINDO AO MELHOR JOGO DA FORCA DO MUNDO</h1>
+    <div class="jumbotron vertical-center">
+        <div class="container">
+                    <form class="formulario">
+                                <div class="form-group mx-sm-3 mb-2">
+                                <label for="nomeDoUsuarioText" class="sr-only">O seu nome é?</label>
+                                <input type="text" name="nomeDoUsuarioText" class="form-control" placeholder="Digite o seu nome!" #nomeDoUsuarioText>
+                                </div>
+                                <button (click)="iniciarUmUsuario(nomeDoUsuarioText)" type="submit" class="btn btn-primary mb-2">Enviar</button>
+                    </form>
+        </div>
+    </div>
 </div>
 
+
 <div *ngIf="usuarioTemUmNome">
-    <app-teste  [letras]="letras" [letrasSelecionadas]="letrasSelecionadas"></app-teste>
+    <div class="container-fluid carroselCentralizado text-center">
+        <app-teste  [letras]="letras" [letrasSelecionadas]="letrasSelecionadas"></app-teste>
+    </div>
 </div>
+

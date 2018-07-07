@@ -4,9 +4,8 @@
   </div>
 </carousel-component>
 
-<button (click)="enviarALetraSelecionada()">Enviar</button>
-<br>
-LETRAS SELECIONADAS:
+<button type="submit" class="btn btn-primary mt-2 animate" (click)="enviarALetraSelecionada()">Enviar</button>
+<h3>LETRAS SELECIONADAS:</h3>
 
 <span *ngFor="let abc of letrasSelecionadas">
   {{abc}}

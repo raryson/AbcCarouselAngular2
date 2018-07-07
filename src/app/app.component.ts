@@ -1,12 +1,14 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { PubNubAngular } from 'pubnub-angular2';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   providers: [PubNubAngular]
 })
+
 export class AppComponent {
   pubnub: PubNubAngular;
   channel: string;
@@ -14,7 +16,7 @@ export class AppComponent {
   @Input() nomeDoUsuario : string
   @Input() usuarioTemUmNome : boolean
 
-  @ViewChild('nomeDoUsuarioTextArea') nomeDoUsuarioTextArea : HTMLTextAreaElement
+  @ViewChild('nomeDoUsuarioText') nomeDoUsuarioTextArea : HTMLTextAreaElement
 
   constructor(pubnub: PubNubAngular){
     this.usuarioTemUmNome = false
