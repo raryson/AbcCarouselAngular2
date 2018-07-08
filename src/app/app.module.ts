@@ -5,13 +5,13 @@ import { RouterModule, Routes} from '@angular/router';
 import { AlertModule } from 'ngx-bootstrap'
 
 import { AppComponent } from './app.component';
-import { TesteComponent } from './teste/teste.component';
+import { PiaoComponent } from './piao/piao.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TesteComponent
+    PiaoComponent
   ],
   imports: [
     BrowserModule,
