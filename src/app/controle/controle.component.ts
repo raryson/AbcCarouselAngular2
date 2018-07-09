@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PubNubAngular } from 'pubnub-angular2';
-import { Usuario } from 'src/app/login/usuario.model'
 
 @Component({
   selector: 'app-controle',
@@ -10,8 +9,6 @@ import { Usuario } from 'src/app/login/usuario.model'
 })
 
 export class ControleComponent implements OnInit {
-  
-  usuario : Usuario;
   pubnub: PubNubAngular;
   channel: string;
   userChannel: string;
@@ -26,6 +23,8 @@ export class ControleComponent implements OnInit {
     this.channel = 'jogando'
     this.userChannel = 'usuario'
     this.pubnub = pubnub
+    this.userHasInitialized = false
+    let usuario
 
     this.pubnub.init({
       publishKey: 'pub-c-bddd3276-8045-43cc-bc90-35b4b09e93f7',
@@ -40,9 +39,13 @@ export class ControleComponent implements OnInit {
     this.pubnub.publish({channel: this.userChannel, message: true})
 
     this.pubnub.getMessage(this.userChannel, (data) => {
-      this.usuario.userHasInitialized = true
       this.userHasInitialized = true
+      usuario = {name : ""}
     })
+  }
+
+  sendLoginToPubNub = msg => {
+    this.pubnub.publish({channel : this.userChannel, message: msg.name})
   }
 
 

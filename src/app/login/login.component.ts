@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Usuario } from 'src/app/login/usuario.model';
 
 @Component({
   selector: 'app-login',
@@ -9,8 +10,7 @@ import { Component, OnInit, Input, ViewChild } from '@angular/core';
 export class LoginComponent implements OnInit {
 
  
-  @Input() nomeDoUsuario : string
-  @Input() usuarioTemUmNome : boolean
+  @Input() model : Usuario;
 
   @ViewChild('nomeDoUsuarioText') nomeDoUsuarioTextArea : HTMLTextAreaElement
 
@@ -19,8 +19,7 @@ export class LoginComponent implements OnInit {
 
   iniciarUmUsuario(data)
   {
-    this.nomeDoUsuario = data.value
-    this.usuarioTemUmNome = true
+    this.model.name = data.value
   }
 
 }
