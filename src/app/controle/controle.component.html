@@ -1,0 +1,12 @@
+ASUIHDAUSHD
+<h1 class="titulo text-center">BEM VINDO AO MELHOR JOGO DA FORCA DO MUNDO</h1>
+<div *ngIf="userHasInitialized" >  
+    <app-login></app-login>
+</div>
+
+
+<div *ngIf="name">
+    <div class="container-fluid carroselCentralizado text-center">
+        <app-peao  [letras]="letras" [letrasSelecionadas]="letrasSelecionadas"></app-peao>
+    </div>
+</div>

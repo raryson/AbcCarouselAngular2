@@ -3,13 +3,13 @@ import {CarouselComponent} from "angular2-carousel";
 import { PubNubAngular } from 'pubnub-angular2';
 
 @Component({
-  selector: 'app-piao',
-  templateUrl: './piao.component.html',
-  styleUrls: ['./piao.component.css'],
+  selector: 'app-peao',
+  templateUrl: './peao.component.html',
+  styleUrls: ['./peao.component.css'],
   providers: [PubNubAngular]
 })
 
-export class PiaoComponent implements OnInit {
+export class PeaoComponent implements OnInit {
   pubnub: PubNubAngular;
   channel: string;
 
