@@ -1,10 +1,9 @@
 <h1 class="titulo text-center">BEM VINDO AO MELHOR JOGO DA FORCA DO MUNDO</h1>
-<div *ngIf="userHasInitialized" >  
-    <app-login [model]="usuario"></app-login>
+<div *ngIf="usuario.gameStarted && !usuario.hasInitialized" >  
+    <app-login [model]="usuario" (sendLogin)="loginUser($event)"></app-login>
 </div>
 
-
-<div *ngIf="name">
+<div *ngIf="usuario.hasInitialized">
     <div class="container-fluid carroselCentralizado text-center">
         <app-peao  [letras]="letras" [letrasSelecionadas]="letrasSelecionadas"></app-peao>
     </div>

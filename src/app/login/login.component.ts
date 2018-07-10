@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from '@angular/core';
 import { Usuario } from 'src/app/login/usuario.model';
 
 @Component({
@@ -11,15 +11,17 @@ export class LoginComponent implements OnInit {
 
  
   @Input() model : Usuario;
+  @Output() sendLogin =  new EventEmitter<any>()
 
   @ViewChild('nomeDoUsuarioText') nomeDoUsuarioTextArea : HTMLTextAreaElement
 
   ngOnInit() {
   }
 
-  iniciarUmUsuario(data)
+  iniciarUmUsuario = (data) =>  
   {
-    this.model.name = data.value
+    this.model = {name : data.value, choosenCharacter : "", hasInitialized : true, gameStarted : true }
+    this.sendLogin.emit(this.model)
   }
 
 }
