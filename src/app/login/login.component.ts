@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   iniciarUmUsuario = (data) =>  
   {
-    this.model = {name : data.value, choosenCharacter : "", hasInitialized : true, gameStarted : true }
+    this.model = {name : data.value, hasInitialized : true, gameStarted : true }
     this.sendLogin.emit(this.model)
   }
 

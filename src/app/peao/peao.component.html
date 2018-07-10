@@ -1,12 +1,21 @@
-<carousel-component #carousel>
-  <div *ngFor="let letra of letras" class="item-carousel letra">
-    {{letra}}
-  </div>
-</carousel-component>
+<div *ngIf="!win && !lose">
+  <carousel-component #carousel>
+    <div *ngFor="let letra of letras" class="item-carousel letra">
+      {{letra}}
+    </div>
+  </carousel-component>
 
-<button type="submit" class="btn btn-primary mt-2 animate" (click)="enviarALetraSelecionada()">Enviar</button>
-<h3>LETRAS SELECIONADAS:</h3>
+  <button type="submit" class="btn btn-primary mt-2 animate" (click)="enviarALetraSelecionada()">Enviar</button>
+  <h3>LETRAS SELECIONADAS:</h3>
 
-<span *ngFor="let abc of letrasSelecionadas">
-  {{abc}}
-</span>
+  <span *ngFor="let abc of letrasSelecionadas">
+    {{abc}}
+  </span>
+</div>
+
+<div *ngIf="win">
+  <h1>GANHOU</h1>
+</div>
+<div *ngIf="lose">
+  PERDEU
+</div>

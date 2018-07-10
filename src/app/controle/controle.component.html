@@ -5,6 +5,6 @@
 
 <div *ngIf="usuario.hasInitialized">
     <div class="container-fluid carroselCentralizado text-center">
-        <app-peao  [letras]="letras" [letrasSelecionadas]="letrasSelecionadas"></app-peao>
+        <app-peao [name]="usuario.name"  [letras]="letras" [letrasSelecionadas]="letrasSelecionadas"></app-peao>
     </div>
 </div>

@@ -20,30 +20,29 @@ export class ControleComponent implements OnInit {
   }
 
   constructor(pubnub: PubNubAngular){
-    this.channel = 'jogando'
-    this.userChannel = 'usuario'
+    this.userChannel = 'eventosJogo'
     this.pubnub = pubnub
-    this.usuario = {name: "", gameStarted: false, hasInitialized : false, choosenCharacter : ""}
+    this.usuario = {name: "", gameStarted: false, hasInitialized : false}
 
     this.pubnub.init({
       publishKey: 'pub-c-bddd3276-8045-43cc-bc90-35b4b09e93f7',
-      subscribeKey: 'sub-c-1bfc82f2-7d97-11e8-a43f-d6f8762e29f7'
+      subscribeKey: 'sub-c-170ce4b6-83dd-11e8-8d65-6a72d609577c'
     })
 
     this.pubnub.subscribe({
-      channels: [this.channel, this.userChannel],
+      channels: [this.userChannel],
       triggerEvents: ['message']
     })
 
-    this.pubnub.publish({channel: this.userChannel, message: true})
-
     this.pubnub.getMessage(this.userChannel, (data) => {
-      this.usuario.gameStarted = true
+      if(data.message.start == "true")
+        this.usuario.gameStarted = true
     })
   }
 
   sendLoginToPubNub = model => {
-    this.pubnub.publish({channel : this.userChannel, message: model.name})
+    this.pubnub.publish({channel : this.userChannel, message: {name:model.name, started:true}})
+    
   }
 
   loginUser = (model) => {
