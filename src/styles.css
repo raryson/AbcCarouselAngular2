@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.css";
-@import url('https://fonts.googleapis.com/css?family=Anton');
 
+@import url('https://static.umbler.com/umbootstrap/themes/umbler-app/dist/css/theme.min.css');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,400i,700');
 
 body{
     background-color: rgb(44, 139, 221);

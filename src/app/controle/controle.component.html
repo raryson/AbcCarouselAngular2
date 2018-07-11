@@ -1,7 +1,28 @@
-<h1 class="titulo text-center">BEM VINDO AO MELHOR JOGO DA FORCA DO MUNDO</h1>
-<div *ngIf="usuario.gameStarted && !usuario.hasInitialized" >  
-    <app-login [model]="usuario" (sendLogin)="loginUser($event)"></app-login>
-</div>
+
+	<div class="container mt-5">
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <div class="card card-block card-collapse footer-collapse-border">
+                        <div class="flex-lg flex-nowrap text-xs-center text-lg-left">
+                            <div class="col-md-12">
+                                <div class="flex-lg flex-nowrap">
+                                    <div>
+                                        <h2 class="text-center col-md-12">BEM VINDO AO MELHOR JOGO DA FORCA DO MUNDO</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mt-2">
+                                <div *ngIf="usuario.gameStarted && !usuario.hasInitialized" >  
+                                        <app-login [model]="usuario" (sendLogin)="loginUser($event)"></app-login>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
 
 <div *ngIf="usuario.hasInitialized">
     <div class="container-fluid carroselCentralizado text-center">
