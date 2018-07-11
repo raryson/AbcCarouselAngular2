@@ -22,7 +22,7 @@ export class ControleComponent implements OnInit {
   constructor(pubnub: PubNubAngular){
     this.userChannel = 'eventosJogo'
     this.pubnub = pubnub
-    this.usuario = {name: "", gameStarted: false, hasInitialized : false}
+    this.usuario = {name: "", jogoIniciou: false, foiIncializado : false}
 
     this.pubnub.init({
       publishKey: 'pub-c-bddd3276-8045-43cc-bc90-35b4b09e93f7',
@@ -36,21 +36,21 @@ export class ControleComponent implements OnInit {
 
     this.pubnub.getMessage(this.userChannel, (data) => {
       if(data.message.start == "true")
-        this.usuario.gameStarted = true
+        this.usuario.jogoIniciou = true
     })
 
     this.pubnub.publish({channel: this.userChannel, message: { start: "true"}})
     
   }
 
-  sendLoginToPubNub = model => {
+  enviarLoginToPubNub = model => {
     this.pubnub.publish({channel : this.userChannel, message: {name:model.name, started:true}})
     
   }
 
-  loginUser = (model) => {
+  loginUsuario = (model) => {
     this.usuario = model
-    this.sendLoginToPubNub(model)
+    this.enviarLoginToPubNub(model)
   }
 
 

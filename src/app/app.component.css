@@ -3,11 +3,3 @@
     top: 10%;
 
 }
-
-.vertical-center
-{
-    min-height: 100% !important;
-    min-height: 100hv !important;
-    display: flex !important;
-    align-items: center !important;
-}

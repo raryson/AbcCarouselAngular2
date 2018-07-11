@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit {
 
  
   @Input() model : Usuario;
-  @Output() sendLogin =  new EventEmitter<any>()
+  @Output() enviarLogin =  new EventEmitter<any>()
 
   @ViewChild('nomeDoUsuarioText') nomeDoUsuarioTextArea : HTMLTextAreaElement
 
@@ -20,8 +20,8 @@ export class LoginComponent implements OnInit {
 
   iniciarUmUsuario = (data) =>  
   {
-    this.model = {name : data.value, hasInitialized : true, gameStarted : true }
-    this.sendLogin.emit(this.model)
+    this.model = {name : data.value, foiIncializado : true, jogoIniciou : true }
+    this.enviarLogin.emit(this.model)
   }
 
 }

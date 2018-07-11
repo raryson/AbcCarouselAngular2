@@ -12,8 +12,8 @@
                     </div>
                 </div>
                 <div class="col-md-12 mt-2">
-                    <div *ngIf="usuario.gameStarted && !usuario.hasInitialized" >  
-                        <app-login [model]="usuario" (sendLogin)="loginUser($event)"></app-login>
+                    <div *ngIf="usuario.jogoIniciou && !usuario.foiIncializado" >  
+                        <app-login [model]="usuario" (enviarLogin)="loginUsuario($event)"></app-login>
                     </div>
                 </div>
             </div>
@@ -21,8 +21,8 @@
     </div>
 </div>
     
-<div *ngIf="usuario.hasInitialized">
-    <div class="container-fluid carroselCentralizado text-center">
+<div *ngIf="usuario.foiIncializado">
+    <div class="container-fluid mx-auto">
         <app-peao [name]="usuario.name"  [letras]="letras" [letrasSelecionadas]="letrasSelecionadas"></app-peao>
     </div>
 </div>

@@ -55,16 +55,19 @@ export class PeaoComponent implements OnInit {
 
   enviarALetraSelecionada()
   {
+    let posicaoDoCarrossel = this.carousel.carousel.activeIndex
+    let letraSelecionada = this.letras[posicaoDoCarrossel]
 
     this.pubnub.publish({
-      channel: this.channel, message: {name: this.name, letter : this.letras[this.carousel.carousel.activeIndex]}
+      channel: this.channel, message: {name: this.name, letter : letraSelecionada}
     })
     
-    this.letrasSelecionadas.push(this.letras[this.carousel.carousel.activeIndex])
-    this.letras.splice(this.carousel.carousel.activeIndex, 1)
+    this.letrasSelecionadas.push(letraSelecionada)
     
-    this.carousel.carouselElm.nativeElement.getElementsByClassName("item-carousel")[this.carousel.carousel.activeIndex].remove()
-    this.carousel.carousel.items.splice(this.carousel.carousel.activeIndex, 1)
+    this.letras.splice(posicaoDoCarrossel, 1)
+    
+    this.carousel.carouselElm.nativeElement.getElementsByClassName("item-carousel")[posicaoDoCarrossel].remove()
+    this.carousel.carousel.items.splice(posicaoDoCarrossel, 1)
     this.carousel.reInit()
   }
 
