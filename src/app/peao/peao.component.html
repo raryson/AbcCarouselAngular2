@@ -4,18 +4,36 @@
       {{letra}}
     </div>
   </carousel-component>
+  <div class="offset-md-2 col-md-8 mb-2">
+      <button class="btn btn-primary btn-lg btn-block mt-2" (click)="enviarALetraSelecionada()">Enviar</button>
+  </div>
+  <div class="container">
+      <div class="row">
+          <div class="col-md-10 offset-md-1">
+              <div class="card card-block card-collapse footer-collapse-border">
+                  <div class="flex-lg flex-nowrap text-xs-center text-lg-left">
+                      <div class="col-md-12">
+                          <div class="flex-lg flex-nowrap">
+                              <div class="mx-auto">
+                                  <h3>LETRAS SELECIONADAS:</h3>
+                                
+                                  <span *ngFor="let abc of letrasSelecionadas">
+                                    {{abc}}
+                                  </span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 
-  <button type="submit" class="btn btn-primary mt-2 animate" (click)="enviarALetraSelecionada()">Enviar</button>
-  <h3>LETRAS SELECIONADAS:</h3>
-
-  <span *ngFor="let abc of letrasSelecionadas">
-    {{abc}}
-  </span>
 </div>
 
 <div *ngIf="win">
   <h1>GANHOU</h1>
 </div>
 <div *ngIf="lose">
-  PERDEU
+  <h1>PERDEU</h1>
 </div>
