@@ -25,8 +25,8 @@ export class ControleComponent implements OnInit {
     this.usuario = {name: "", jogoIniciou: false, foiIncializado : false}
 
     this.pubnub.init({
-      publishKey: 'pub-c-bddd3276-8045-43cc-bc90-35b4b09e93f7',
-      subscribeKey: 'sub-c-1bfc82f2-7d97-11e8-a43f-d6f8762e29f7'
+      publishKey: 'pub-c-4f3b47fe-2386-4415-a053-87bbe6024077',
+      subscribeKey: 'sub-c-170ce4b6-83dd-11e8-8d65-6a72d609577c'
     })
 
     this.pubnub.subscribe({

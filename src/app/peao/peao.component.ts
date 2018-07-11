@@ -11,6 +11,7 @@ import { PubNubAngular } from 'pubnub-angular2';
 
 export class PeaoComponent implements OnInit {
   pubnub: PubNubAngular;
+  pubnubsub: PubNubAngular;
   channel: string;
   channelEventosJogo : string
   win : boolean
@@ -25,7 +26,13 @@ export class PeaoComponent implements OnInit {
       subscribeKey: 'sub-c-1bfc82f2-7d97-11e8-a43f-d6f8762e29f7'
     });
 
-    this.pubnub.getMessage(this.channelEventosJogo, (data) => {
+    this.pubnubsub = new PubNubAngular()
+    this.pubnubsub.init({
+      publishKey: 'pub-c-4f3b47fe-2386-4415-a053-87bbe6024077',
+      subscribeKey: 'sub-c-170ce4b6-83dd-11e8-8d65-6a72d609577c'
+    })
+
+    this.pubnubsub.getMessage(this.channelEventosJogo, (data) => {
       if(data.message.win == "true")
       {
         this.win = true 
@@ -36,7 +43,7 @@ export class PeaoComponent implements OnInit {
       }
     })
 
-    this.pubnub.subscribe({
+    this.pubnubsub.subscribe({
       channels: [this.channelEventosJogo],
       triggerEvents: ['message']
     });
