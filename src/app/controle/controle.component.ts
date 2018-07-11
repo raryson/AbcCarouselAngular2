@@ -38,8 +38,6 @@ export class ControleComponent implements OnInit {
       if(data.message.start == "true")
         this.usuario.jogoIniciou = true
     })
-
-    this.pubnub.publish({channel: this.userChannel, message: { start: "true"}})
     
   }
 
