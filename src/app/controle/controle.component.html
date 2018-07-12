@@ -12,9 +12,9 @@
                     </div>
                 </div>
                 <div class="col-md-12 mt-2">
-                    <div *ngIf="usuario.jogoIniciou && !usuario.foiIncializado" >  
+                    <!-- <div *ngIf="usuario.jogoIniciou && !usuario.foiIncializado" >   -->
                         <app-login [model]="usuario" (enviarLogin)="loginUsuario($event)"></app-login>
-                    </div>
+                    <!-- </div> -->
                 </div>
             </div>
         </div>
@@ -23,6 +23,6 @@
     
 <div *ngIf="usuario.foiIncializado">
     <div class="container-fluid mx-auto">
-        <app-peao [name]="usuario.name"  [letras]="letras" [letrasSelecionadas]="letrasSelecionadas"></app-peao>
+        <app-peao [name]="usuario.name" class="mx-auto" [letras]="letras" [letrasSelecionadas]="letrasSelecionadas"></app-peao>
     </div>
 </div>

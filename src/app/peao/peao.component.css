@@ -1,6 +1,8 @@
-.letra
-{
+.letra{
     font-size: 100px;
+    text-align: center !important;
+    vertical-align: middle !important;
+    line-height: 55VH; 
 }
 
 .actual

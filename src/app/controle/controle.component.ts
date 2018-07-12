@@ -51,8 +51,8 @@ export class ControleComponent implements OnInit {
   }
 
 
-  letras = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
-  'q', 'r', 's', 't', 'u', 'v', 'x', 'w', 'y', 'z']
+  letras = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
+  'Q', 'R', 'S', 'T', 'U', 'V', 'X', 'W', 'Y', 'Z']
   letrasSelecionadas = []
 
 }
