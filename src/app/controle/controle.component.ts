@@ -48,7 +48,6 @@ export class ControleComponent implements OnInit {
 
   loginUsuario = (model) => {
     this.usuario = model
-    this.enviarLoginToPubNub(model)
   }
 
 
