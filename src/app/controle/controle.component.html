@@ -12,9 +12,9 @@
                     </div>
                 </div>
                 <div class="col-md-12 mt-2">
-                    <!-- <div *ngIf="usuario.jogoIniciou && !usuario.foiIncializado" >   -->
+                    <div *ngIf="usuario.jogoIniciou && !usuario.foiIncializado" >  
                         <app-login [model]="usuario" (enviarLogin)="loginUsuario($event)"></app-login>
-                    <!-- </div> -->
+                    </div>
                 </div>
             </div>
         </div>
