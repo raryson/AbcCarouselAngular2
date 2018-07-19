@@ -31,9 +31,9 @@
 
 </div>
 
-<div *ngIf="win">
-  <h1>GANHOU</h1>
+<div *ngIf="!win" class="offset-md-2 col-md-8 mb-2">
+    <img src="../../assets/images/win.png" alt="ganhou" width="800px">
 </div>
-<div *ngIf="lose">
-  <h1>PERDEU</h1>
+<div *ngIf="!lose" class="offset-md-2 col-md-8 mb-2">
+    <img src="../../assets/images/lose.png" alt="lose" width="800px">
 </div>
